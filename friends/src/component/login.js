@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../util/axiosWithAuth";
+import styled from 'styled-components';
+
+// Material UI
+import { TextField, Button } from '@material-ui/core';
+
 
 function Login(props) {
 	console.log("app props: ", props);
@@ -36,26 +41,38 @@ function Login(props) {
 	};
 
 	return (
-		<div>
+		<Container>
 			<form onSubmit={login}>
-				<input
+				<TextField
+					id='standard-basic'
 					type="text"
 					name="username"
-					Placeholder='Username'
+					label='Username'
 					value={cred.credentials.username}
 					onChange={handleChange}
 				/>
-				<input
+				&nbsp;
+				<TextField
+					id='standard-basic'
 					type="password"
 					name="password"
-					Placeholder='Password'
+					label='Password'
 					value={cred.credentials.password}
 					onChange={handleChange}
-				/>
-				<button>Log in</button>
+				/><br />
+				<Button className='log-in-btn' variant="contained" color="primary" type='submit'>Log in</Button>
 			</form>
-		</div>
+		</Container>
 	);
 }
 
+const Container = styled.div`
+
+	.log-in-btn {
+		margin: 10px 0px;
+	}
+`;
+
 export default Login;
+
+

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { axiosWithAuth } from "../util/axiosWithAuth";
+import styled from 'styled-components';
+import { TextField, Button } from '@material-ui/core';
 
 function NewFriend(props) {
 	const [input, setInput] = useState({
@@ -30,33 +32,43 @@ function NewFriend(props) {
 	};
 
 	return (
-		<div>
+		<NewFriendContainer>
+			<h2>Add a New Friend</h2>
 			<form onSubmit={add}>
-				<input
+				<TextField
 					type="text"
                     name="name"
-                    Placeholder='name'
+                    label='name'
 					value={input.name}
 					onChange={handleChange}
-				/>
-				<input
+				/><br />
+				<TextField
 					type="text"
                     name="age"
-                    Placeholder='age'
+                    label='age'
 					value={input.age}
 					onChange={handleChange}
-				/>
-				<input
+				/><br />
+				<TextField
 					type="text"
                     name="email"
-                    Placeholder='email'
+                    label='email'
 					value={input.email}
 					onChange={handleChange}
-				/>
-				<button>Add New Friend</button>
+				/><br />
+				<Button className='new-friend-btn' variant="contained" color="primary" type='submit'>Add New Friend</Button>
 			</form>
-		</div>
+		</NewFriendContainer>
 	);
 }
+
+const NewFriendContainer = styled.div`
+	position: relative;
+	top: -200px;
+
+	.new-friend-btn {
+		margin: 10px 0px;
+	}
+`;
 
 export default NewFriend;
