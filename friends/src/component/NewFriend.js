@@ -9,10 +9,6 @@ function NewFriend(props) {
 		id: Date.now(),
 	});
 
-	// useEffect(() => {
-	// 	axiosWithAuth().post().then().catch();
-	// }, []);
-
 	const handleChange = (e) => {
 		setInput({
 			...input,
@@ -36,30 +32,27 @@ function NewFriend(props) {
 	return (
 		<div>
 			<form onSubmit={add}>
-				Name: &nbsp;
 				<input
 					type="text"
-					name="name"
+                    name="name"
+                    Placeholder='name'
 					value={input.name}
 					onChange={handleChange}
 				/>
-				<br />
-				Age: &nbsp;
 				<input
 					type="text"
-					name="age"
+                    name="age"
+                    Placeholder='age'
 					value={input.age}
 					onChange={handleChange}
 				/>
-				<br />
-				Email: &nbsp;
 				<input
 					type="text"
-					name="email"
+                    name="email"
+                    Placeholder='email'
 					value={input.email}
 					onChange={handleChange}
 				/>
-				<br />
 				<button>Add New Friend</button>
 			</form>
 		</div>

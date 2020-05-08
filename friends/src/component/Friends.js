@@ -39,10 +39,10 @@ function Friends(props) {
 							</p>
 							<button
 								onClick={(e) => unFriend(e, friend.id)}>
-								Delete
+								unfriend
 							</button>
 						</div>
-				  ))
+				))
 				: "loading"}
 		</div>
 	);

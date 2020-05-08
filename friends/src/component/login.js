@@ -41,12 +41,14 @@ function Login(props) {
 				<input
 					type="text"
 					name="username"
+					Placeholder='Username'
 					value={cred.credentials.username}
 					onChange={handleChange}
 				/>
 				<input
 					type="password"
 					name="password"
+					Placeholder='Password'
 					value={cred.credentials.password}
 					onChange={handleChange}
 				/>
