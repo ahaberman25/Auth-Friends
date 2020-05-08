@@ -27,11 +27,12 @@ function Login(props) {
 			.then((res) => {
 				console.log("res ", res);
 				localStorage.setItem("token", res.data.payload);
-				props.history.push("/protected");
+				props.history.push("/friends");
 			})
 			.catch((err) => {
 				console.log("error login: ", err);
-			});
+			})
+			.finally(() => window.location.reload());
 	};
 
 	return (
