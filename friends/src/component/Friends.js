@@ -25,7 +25,7 @@ function Friends(props) {
 			.finally(() => window.location.reload());
 	}
 
-	console.log("friends from api ", friends);
+	// console.log("friends from api ", friends);
 
 	return (
 		<FriendsContainer>

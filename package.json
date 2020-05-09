@@ -1,21 +1,24 @@
 {
-  "name": "server",
+  "name": "now-express",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "heroku": "^7.40.0",
+    "now": "^19.0.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd friends && npm install --only=dev && npm install && npm run build"
   },
   "author": "Lambda School",
   "license": "ISC"

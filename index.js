@@ -60,6 +60,10 @@ function authenticator(req, res, next) {
   }
 }
 
+app.get('/', (req, res) => {
+  res.send('welcome to my friends server!')
+})
+
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'login' && password === 'password') {
