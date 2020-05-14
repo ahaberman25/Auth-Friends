@@ -60,9 +60,10 @@ function authenticator(req, res, next) {
   }
 }
 
-app.get('/', (req, res) => {
-  res.send('welcome to my friends server!')
-})
+module.exports = (req, res) => {
+  const { name = 'World' } = req.query
+  res.send(`Hello ${name}!`)
+}
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
