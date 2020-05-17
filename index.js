@@ -60,9 +60,14 @@ function authenticator(req, res, next) {
   }
 }
 
+module.exports = (req, res) => {
+  const { name = 'World' } = req.query
+  res.send(`Hello ${name}!`)
+}
+
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'Lambda School' && password === 'i<3Lambd4') {
+  if (username === 'login' && password === 'password') {
     req.loggedIn = true;
     res.status(200).json({
       payload: token
